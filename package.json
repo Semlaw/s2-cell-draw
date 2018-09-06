@@ -1,0 +1,22 @@
+{
+  "author": {
+    "name": "senmao"
+  },
+  "dependencies": {
+    "s2-geometry": "^1.2.10"
+  },
+  "description": "A library for Google s2 cell drawing",
+  "keywords": [
+    "s2",
+    "s2Cell",
+    "s2CellPath",
+    "s2CellDrawing"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "s2-cell-draw",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.1.1"
+}
