@@ -6,6 +6,10 @@
     "s2-geometry": "^1.2.10"
   },
   "description": "A library for Google s2 cell drawing",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Semlaw/s2-cell-draw.git"
+  },
   "keywords": [
     "s2",
     "s2Cell",
