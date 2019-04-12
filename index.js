@@ -76,16 +76,16 @@ function getPointListFromBounds(option = {}) {
   const s2Key = S2.latLngToKey(_lat, _lng, level);
   const { lng, lat } = S2.keyToLatLng(s2Key);
   const neighborsKey = S2.latLngToNeighborKeys(lat, lng, level);
-  const { lng: rightLng } = S2.keyToLatLng(neighborsKey[2]);
-  const { lat: topLat } = S2.keyToLatLng(neighborsKey[3]);
+  const rightLng = Math.max(S2.keyToLatLng(neighborsKey[2]).lng, S2.keyToLatLng(neighborsKey[3]).lng);
+  const topLat = Math.max(S2.keyToLatLng(neighborsKey[2]).lat, S2.keyToLatLng(neighborsKey[3]).lat);
   const unitLng = rightLng - lng;
   const unitLat = topLat - lat;
-  const startLng = bounds[0][0] - unitLng * blurRatio;
-  const endLng = bounds[1][0] + unitLng * blurRatio;
-  const startLat = bounds[0][1] - unitLat * blurRatio;
-  const endLat = bounds[1][1] + unitLat * blurRatio;
-  const stepLng = unitLng / splitCount;
-  const stepLat = unitLat / splitCount;
+  const startLng = Math.min(bounds[0][0], bounds[1][0]) - unitLng * blurRatio;
+  const endLng = Math.max(bounds[0][0], bounds[1][0]) + unitLng * blurRatio;
+  const startLat = Math.min(bounds[0][1], bounds[1][1]) - unitLat * blurRatio;
+  const endLat = Math.max(bounds[0][1], bounds[1][1]) + unitLat * blurRatio;
+  const stepLng = Math.abs(unitLng) / splitCount;
+  const stepLat = Math.abs(unitLat) / splitCount;
   const pointList = [];
   for (let lngNum = startLng; lngNum < endLng; lngNum += stepLng) {
     for (let latNum = startLat; latNum < endLat; latNum += stepLat) {
