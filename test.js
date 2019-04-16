@@ -18,3 +18,9 @@ const polygonList = createPolygonListFromBounds({
   level: 16
 });
 console.log(polygonList);
+
+const polygonList2 = createPolygonListFromBounds({
+  bounds: [[151.3421404, -33.4394666], [151.369177, -33.4261437]],
+  level: 16
+});
+console.log(polygonList2);
