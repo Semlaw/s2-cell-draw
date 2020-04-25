@@ -1,5 +1,7 @@
 # s2-cell-draw
 
+[![Build Status](https://www.travis-ci.org/Semlaw/s2-cell-draw.svg?branch=master)](https://www.travis-ci.org/Semlaw/s2-cell-draw)
+
 > A library for Google s2 cell draw
 
 ## Install
