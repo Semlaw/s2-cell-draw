@@ -62,10 +62,16 @@ function deboxByKey(s2Key) {
 }
 
 /**
- * bounds: [[southwestLng = Number, southwestLat = Number],[northeastLng, northeastLat]]
+ * 
+ * @description get S2Cell list that covers the screen
+ * 
+ * @typedef {Array} bounds - [[southwestLng = Number, southwestLat = Number],[northeastLng = Number, northeastLat = Number ]]
+ * 
+ * @typedef {object} optoin
+ * @property {bounds} bounds
+ * @property {Number = 16} level - s2 key level ,
+ * 
  */
-// get S2Cell list that covers the screen
-// [_lng, _lat], bounds, level = 16
 function getPointListFromBounds(option = {}) {
   const { bounds } = option;
   const level = option.level || 16;
